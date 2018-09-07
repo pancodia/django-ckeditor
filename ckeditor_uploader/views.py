@@ -103,8 +103,11 @@ class ImageUploadView(generic.View):
                 window.parent.CKEDITOR.tools.callFunction({0}, '{1}');
             </script>""".format(ck_func_num, url))
         else:
-            retdata = {'url': url, 'uploaded': '1',
-                       'fileName': uploaded_file.name}
+            retdata = {
+                'url': url,
+                'uploaded': '1',
+                'fileName': uploaded_file.name
+            }
             return JsonResponse(retdata)
 
     @staticmethod
